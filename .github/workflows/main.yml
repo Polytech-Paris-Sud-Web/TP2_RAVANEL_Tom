@@ -12,5 +12,5 @@ jobs:
       uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.2.0
       with:
         github_access_token: ${{ secrets.ACCESS_TOKEN }}
-        build_folder: dist
+        build_folder: dist/simple-app
         base_href: /TP1_RAVANEL_Tom_Angular/
