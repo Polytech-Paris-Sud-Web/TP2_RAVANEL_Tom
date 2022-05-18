@@ -1,0 +1,15 @@
+div{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+
+app-article{
+    transition: box-shadow .3s;
+    margin: 10px;
+}
+
+app-article:hover{
+    box-shadow: 0px 0px 14px rgba(33,33,33,.6); 
+}

@@ -1,0 +1,7 @@
+<div>
+    <h3><a [routerLink]="['/articles',this.article.id]"> {{this.article.title}} </a></h3>
+    <p> Écrit par <a [routerLink]="['/author',this.article.author]">{{this.article.author}}</a> </p>
+    <p> {{this.article.content}} </p>
+
+    <button (click)="delete()">Supprimer</button>
+</div>

@@ -1,0 +1,42 @@
+div{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+
+app-article{
+    transition: box-shadow .3s;
+    margin: 10px;
+}
+
+app-article:hover{
+    box-shadow: 0px 0px 14px rgba(33,33,33,.6); 
+}
+
+input[type=text], select {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit]{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 50%;
+    background-color: #0178FF;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}  
+
+input[type=submit]:hover {
+    background-color: #0199FF;
+}

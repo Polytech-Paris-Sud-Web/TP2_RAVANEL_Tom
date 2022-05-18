@@ -1,0 +1,9 @@
+<div>
+    <form [formGroup]="searchForm" (ngSubmit)="searchArticle()">
+        <div>
+          <input type="text" formControlName="searchedText">
+          <input [disabled]="searchForm.invalid" type="submit" value="rechercher">
+        </div>
+      </form>
+    <app-article *ngFor="let article of this.articles" [article]=article (deletedArticle)="delete($event)"></app-article>
+</div>

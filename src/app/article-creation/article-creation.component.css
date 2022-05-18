@@ -1,0 +1,52 @@
+input[type=text], select {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+div{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+form{
+  width: 400px;
+}
+  
+input[type=submit]{
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  background-color: #0178FF;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}  
+
+textarea{
+  font-family: Arial, Helvetica, sans-serif;
+  border-color: #BBBBBB;
+  width: 88%;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border-radius: 4px;
+}
+  
+input[type=submit]:hover {
+  background-color: #0199FF;
+}
+  
+div {
+  border-radius: 5px;
+  padding: 20px;
+}

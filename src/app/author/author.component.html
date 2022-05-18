@@ -1,0 +1,5 @@
+<div>
+    <h3>{{this.name}}</h3>
+    <h4>Articles : </h4>
+    <app-article *ngFor="let article of this.articles" [article]=article (deletedArticle)="delete($event)"></app-article>
+</div>
