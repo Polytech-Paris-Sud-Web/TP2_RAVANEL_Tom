@@ -18,7 +18,7 @@ export class ArticleComponent implements OnInit {
   constructor(private articleService : ArticleService, private activatedRoute: ActivatedRoute,private router:Router){ }
 
   delete(){
-    this.articleService.delete(this.article.id).subscribe(value=>{
+    this.articleService.delete(this.article.id).subscribe(()=>{
       this.deletedArticle.emit(this.article)
       if(this.router.url == "/articles/"+this.article.id){
         this.router.navigateByUrl("/articles")

@@ -22,8 +22,8 @@
   "authors": [
     {
       "name": "Tom R.",
-      "age": "23",
-      "description": "Bonjour je suis Tom RAVANEL élève en dernière année à Polytech Paris-Saclay",
+      "age": 23,
+      "description": "Bonjour je suis Tom RAVANEL élève en dernière année à Polytech Paris-Saclay\n\n",
       "id": "1"
     }
   ]

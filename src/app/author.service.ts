@@ -17,7 +17,7 @@ export class AuthorService {
   }
 
   public modifyAuthor(author : Author): Observable<Author>{
-    return this.http.put<Author>("http://localhost:3000/authors", author);
+    return this.http.put<Author>("http://localhost:3000/authors/" + author.id, author);
   }
 
   public createAuthor(author : BaseAuthor): Observable<Author> {
