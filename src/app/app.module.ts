@@ -14,6 +14,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ArticlesHomeWidgetComponent } from './articles-home-widget/articles-home-widget.component';
 import { AuthorComponent } from './author/author.component';
 import { AuthorFormComponent } from './author-form/author-form.component';
+import { AuthorService } from './author.service';
 
 const appRoutes: Routes = [
   { path: 'create', component: ArticleCreationComponent },
@@ -43,7 +44,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     ReactiveFormsModule 
   ],
-  providers: [ArticleService],
+  providers: [ArticleService, AuthorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
