@@ -1,0 +1,17 @@
+<div>
+    <h2>Modify author</h2>
+    <form [formGroup]="authorForm" (ngSubmit)="modifyAuthor()">
+      <div>        
+        <br />
+        <label class="center-block">Age</label>
+        <input type="text" formControlName="age">
+
+        <br />
+        <label class="center-block">Description</label>
+        <textarea formControlName="description"></textarea>
+        
+        <br />
+        <input [disabled]="authorForm.invalid" type="submit" value="Save">
+      </div>
+    </form>
+  </div>

@@ -1,5 +1,8 @@
 <div>
     <h3>{{this.name}}</h3>
+    <p *ngIf="this.author != undefined">Âge : {{this.author?.age}} ans</p>
+    <p *ngIf="this.author != undefined">Description : {{this.author?.description}}</p>
     <h4>Articles : </h4>
     <app-article *ngFor="let article of this.articles" [article]=article (deletedArticle)="delete($event)"></app-article>
 </div>
+<app-author-form [name]="this.name" (authorUpdated)="onAuthorUpdated($event)"></app-author-form>
