@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1652957419006,
+  "timestamp": 1652959111747,
   "index": "/TP2_RAVANEL_Tom/index.html",
   "assetGroups": [
     {
@@ -45,6 +45,7 @@
     {
       "name": "api-cache",
       "patterns": [
+        "https:\\/\\/my-json-server\\.typicode\\.com\\/Polytech-Paris-Sud-Web\\/TP2_RAVANEL_Tom\\/",
         "https:\\/\\/my-json-server\\.typicode\\.com\\/Polytech-Paris-Sud-Web\\/TP2_RAVANEL_Tom\\/articles\\/",
         "https:\\/\\/my-json-server\\.typicode\\.com\\/Polytech-Paris-Sud-Web\\/TP2_RAVANEL_Tom\\/articles\\/[^/]*",
         "https:\\/\\/my-json-server\\.typicode\\.com\\/Polytech-Paris-Sud-Web\\/TP2_RAVANEL_Tom\\/authors"
