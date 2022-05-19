@@ -1,6 +1,6 @@
 export type Author = {
-    name:string;
+    name:String;
     age:String;
     description:String;
-    id:string;
+    id:String;
   }

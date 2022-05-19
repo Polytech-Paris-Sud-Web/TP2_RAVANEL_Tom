@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Author } from '../model/Author';
 import { BaseAuthor } from '../model/BaseAuthor';
+import { AuthorSource } from './author.source';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class AuthorService {
+export class AuthorService implements AuthorSource {
 
   constructor(private http : HttpClient) { }
 

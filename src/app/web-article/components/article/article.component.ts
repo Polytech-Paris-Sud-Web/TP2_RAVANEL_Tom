@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Article } from '../../model/Article';
-import { ArticleService } from '../../services/article.service';
+import { ArticleSource } from '../../services/article.source';
 
 @Component({
   selector: 'app-article',
@@ -15,10 +15,10 @@ export class ArticleComponent implements OnInit {
   @Output()
   deletedArticle : EventEmitter<Article> = new EventEmitter();
 
-  constructor(private articleService : ArticleService, private activatedRoute: ActivatedRoute,private router:Router){ }
+  constructor(private articleSource : ArticleSource, private activatedRoute: ActivatedRoute,private router:Router){ }
 
   delete(){
-    this.articleService.delete(this.article.id).subscribe(()=>{
+    this.articleSource.delete(this.article.id).subscribe(()=>{
       this.deletedArticle.emit(this.article)
       if(this.router.url == "/articles/"+this.article.id){
         this.router.navigateByUrl("/articles")
@@ -29,7 +29,7 @@ export class ArticleComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe( params => {
       if (params && params['id']){
-        this.articleService.getArticle(params['id']).subscribe(fetchedArticle => this.article = fetchedArticle);
+        this.articleSource.getArticle(params['id']).subscribe(fetchedArticle => this.article = fetchedArticle);
       }
     });
   }

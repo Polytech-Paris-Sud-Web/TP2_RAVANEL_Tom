@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Article } from '../../model/Article';
 import { BaseArticle } from '../../model/BaseArticle';
-import { ArticleService } from '../../services/article.service';
+import { ArticleSource } from '../../services/article.source';
 
 @Component({
   selector: 'app-article-creation',
@@ -16,7 +16,7 @@ export class ArticleCreationComponent implements OnInit {
   @Output()
   articleAdded : EventEmitter<Article> = new EventEmitter<Article>();
 
-  constructor(private fb: FormBuilder, private articleService: ArticleService, private router:Router) {
+  constructor(private fb: FormBuilder, private articleSource: ArticleSource, private router:Router) {
     this.articleForm = this.fb.group({
       title: ['', Validators.required ],
       content : ['', Validators.required ],
@@ -30,7 +30,7 @@ export class ArticleCreationComponent implements OnInit {
       content,
       author
     }
-    this.articleService.createArticle(newArticle).subscribe((article) => {
+    this.articleSource.createArticle(newArticle).subscribe((article) => {
       this.articleAdded.emit(article);
       this.router.navigateByUrl("/articles")
     });

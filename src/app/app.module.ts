@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -17,6 +17,10 @@ import { ArticlesHomeWidgetComponent } from './web-article/components/articles-h
 import { AuthorService } from './web-author/services/author.service';
 import { ArticleService } from './web-article/services/article.service';
 import { AuthorFormComponent } from './web-author/components/author-form/author-form.component';
+import { ArticleSource } from './web-article/services/article.source';
+import { ArticleInMemorySource } from './web-article/services/article.in-memory-source';
+import { AuthorSource } from './web-author/services/author.source';
+import { AuthorInMemorySource } from './web-author/services/author.in-memory-source';
 
 const appRoutes: Routes = [
   { path: 'create', component: ArticleCreationComponent },
@@ -52,7 +56,22 @@ const appRoutes: Routes = [
       registrationStrategy: 'registerWhenStable:30000'
     }) 
   ],
-  providers: [ArticleService, AuthorService],
+  providers: [ {provide: ArticleSource, useFactory: (httpClient:HttpClient) => {
+    if(environment.production){
+      return new ArticleService(httpClient);
+    } else{
+      return new ArticleInMemorySource();
+    }
+  }, deps:[HttpClient]
+}, {provide: AuthorSource, useFactory: (httpClient:HttpClient) => {
+  if(environment.production){
+    return new AuthorService(httpClient);
+  } else{
+    return new AuthorInMemorySource();
+  }
+}, deps:[HttpClient]
+}
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

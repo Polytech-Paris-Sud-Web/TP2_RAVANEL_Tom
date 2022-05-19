@@ -3,11 +3,12 @@ import {HttpClient} from "@angular/common/http";
 import { Observable } from 'rxjs/internal/Observable';
 import { Article } from '../model/Article';
 import { BaseArticle } from '../model/BaseArticle';
+import { ArticleSource } from './article.source';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ArticleService {
+export class ArticleService implements ArticleSource{
 
   constructor(private http : HttpClient) { }
 
