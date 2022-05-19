@@ -26,5 +26,20 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "api-cache",
+      "urls": [
+        "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2_RAVANEL_Tom/articles/",
+        "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2_RAVANEL_Tom/articles/*",
+        "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2_RAVANEL_Tom/authors"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 50,
+        "maxAge": "7d"
+      }
+    }
   ]
 }
