@@ -10,7 +10,7 @@ import { ArticleSource } from '../../services/article.source';
 })
 export class ArticleComponent implements OnInit {
   @Input()
-  article!: Article;
+  article: Article |undefined;
   
   @Output()
   deletedArticle : EventEmitter<Article> = new EventEmitter();
@@ -18,18 +18,20 @@ export class ArticleComponent implements OnInit {
   constructor(private articleSource : ArticleSource, private activatedRoute: ActivatedRoute,private router:Router){ }
 
   delete(){
-    this.articleSource.delete(this.article.id).subscribe(()=>{
-      this.deletedArticle.emit(this.article)
-      if(this.router.url == "/articles/"+this.article.id){
-        this.router.navigateByUrl("/articles")
-      }
-    });
+    if(this.article !== undefined){
+      this.articleSource.delete(this.article.id).subscribe(()=>{
+        this.deletedArticle.emit(this.article)
+        if(this.article !== undefined && this.router.url == "/articles/"+this.article.id){
+          this.router.navigateByUrl("/articles")
+        }
+      });
+    }
   }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe( params => {
-      if (params && params['id']){
-        this.articleSource.getArticle(params['id']).subscribe(fetchedArticle => this.article = fetchedArticle);
+      if (params && params['id']){        
+          this.articleSource.getArticle(params['id']).subscribe(fetchedArticle => {this.article = fetchedArticle});            
       }
     });
   }
