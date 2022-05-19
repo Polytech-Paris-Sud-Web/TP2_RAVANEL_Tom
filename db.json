@@ -1,20 +1,20 @@
 {
   "articles": [
     {
-      "title": "My First Article",
-      "content": "Hello World from Db",
+      "title": "Too hot",
+      "content": "I'm dying please help",
       "author": "Tom R.",
       "id": "1"
     },
     {
-      "title": "Angular component",
-      "content": "Angular component looks awesome!",
+      "title": "Video game",
+      "content": "Play Portal 2",
       "author": "Tom R.",
       "id": "2"
     },
     {
-      "title": "Angular service",
-      "content": "I read something about angular service, i will try it soon",
+      "title": "Cats or dog",
+      "content": "Both are fine",
       "author": "Tom R.",
       "id": "3"
     }
