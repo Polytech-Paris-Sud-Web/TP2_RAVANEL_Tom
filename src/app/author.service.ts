@@ -12,15 +12,17 @@ export class AuthorService {
 
   constructor(private http : HttpClient) { }
 
+  private readonly baseUrl:string = "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2_RAVANEL_Tom/authors/";
+
   public getAuthors() : Observable<Author[]> {
-    return this.http.get<Author[]>("http://localhost:3000/authors");
+    return this.http.get<Author[]>(this.baseUrl);
   }
 
   public modifyAuthor(author : Author): Observable<Author>{
-    return this.http.put<Author>("http://localhost:3000/authors/" + author.id, author);
+    return this.http.put<Author>(this.baseUrl + author.id, author);
   }
 
   public createAuthor(author : BaseAuthor): Observable<Author> {
-    return this.http.post<Author>("http://localhost:3000/authors", author);
+    return this.http.post<Author>(this.baseUrl, author);
   }
 }

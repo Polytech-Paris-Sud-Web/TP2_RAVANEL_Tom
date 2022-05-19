@@ -11,19 +11,21 @@ export class ArticleService {
 
   constructor(private http : HttpClient) { }
 
+  private readonly baseUrl:string = "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2_RAVANEL_Tom/articles/";
+
   public getArticles() : Observable<Article[]> {
-    return this.http.get<Article[]>("http://localhost:3000/articles");
+    return this.http.get<Article[]>(this.baseUrl);
   }
 
   public getArticle(id:String): Observable<Article> {
-    return this.http.get<Article>("http://localhost:3000/articles/" +id);
+    return this.http.get<Article>(this.baseUrl+id);
   }
 
   public delete(id:String): Observable<Article[]>{
-    return this.http.delete<Article[]>("http://localhost:3000/articles/"+id);
+    return this.http.delete<Article[]>(this.baseUrl+id);
   }
 
   public createArticle(article : BaseArticle): Observable<Article> {
-    return this.http.post<Article>("http://localhost:3000/articles/", article);
+    return this.http.post<Article>(this.baseUrl, article);
   }
 }

@@ -15,6 +15,8 @@ import { ArticlesHomeWidgetComponent } from './articles-home-widget/articles-hom
 import { AuthorComponent } from './author/author.component';
 import { AuthorFormComponent } from './author-form/author-form.component';
 import { AuthorService } from './author.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   { path: 'create', component: ArticleCreationComponent },
@@ -42,7 +44,13 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }) 
   ],
   providers: [ArticleService, AuthorService],
   bootstrap: [AppComponent]
