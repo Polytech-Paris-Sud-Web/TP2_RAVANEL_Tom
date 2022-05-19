@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ArticleService } from '../article.service';
-import { AuthorService } from '../author.service';
-import { Article } from '../model/Article';
-import { Author } from '../model/Author';
-import { BaseAuthor } from '../model/BaseAuthor';
+import { ActivatedRoute } from '@angular/router';
+import { Article } from 'src/app/web-article/model/Article';
+import { ArticleService } from 'src/app/web-article/services/article.service';
+import { Author } from '../../model/Author';
+import { BaseAuthor } from '../../model/BaseAuthor';
+import { AuthorService } from '../../services/author.service';
 
 @Component({
   selector: 'app-author',

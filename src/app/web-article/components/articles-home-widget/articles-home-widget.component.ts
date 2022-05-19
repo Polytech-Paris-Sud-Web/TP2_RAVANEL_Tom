@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleService } from '../article.service';
-import { Article } from '../model/Article';
+import { Article } from '../../model/Article';
+import { ArticleService } from '../../services/article.service';
 
 @Component({
   selector: 'app-articles-home-widget',

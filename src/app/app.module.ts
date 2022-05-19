@@ -5,18 +5,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ArticleService } from './article.service';
-import { ArticleComponent } from './article/article.component';
-import { ArticlesComponent } from './articles/articles.component';
-import { ArticleCreationComponent } from './article-creation/article-creation.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { ArticlesHomeWidgetComponent } from './articles-home-widget/articles-home-widget.component';
-import { AuthorComponent } from './author/author.component';
-import { AuthorFormComponent } from './author-form/author-form.component';
-import { AuthorService } from './author.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ArticleCreationComponent } from './web-article/components/article-creation/article-creation.component';
+import { ArticlesComponent } from './web-article/components/articles/articles.component';
+import { ArticleComponent } from './web-article/components/article/article.component';
+import { AuthorComponent } from './web-author/components/author/author.component';
+import { ArticlesHomeWidgetComponent } from './web-article/components/articles-home-widget/articles-home-widget.component';
+import { AuthorService } from './web-author/services/author.service';
+import { ArticleService } from './web-article/services/article.service';
+import { AuthorFormComponent } from './web-author/components/author-form/author-form.component';
 
 const appRoutes: Routes = [
   { path: 'create', component: ArticleCreationComponent },

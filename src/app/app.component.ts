@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ArticleService } from './article.service';
 
 @Component({
   selector: 'app-root',

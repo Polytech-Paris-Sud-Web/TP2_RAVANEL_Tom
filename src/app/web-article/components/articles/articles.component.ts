@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Observable, of } from 'rxjs';
-import { ArticleService } from '../article.service';
-import { Article } from '../model/Article';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Article } from '../../model/Article';
+import { ArticleService } from '../../services/article.service';
 
 @Component({
   selector: 'app-articles',

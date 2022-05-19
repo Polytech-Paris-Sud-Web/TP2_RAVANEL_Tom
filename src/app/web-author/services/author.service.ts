@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { Author } from './model/Author';
-import { BaseAuthor } from './model/BaseAuthor';
+import { Author } from '../model/Author';
+import { BaseAuthor } from '../model/BaseAuthor';
 
 @Injectable({
   providedIn: 'root'

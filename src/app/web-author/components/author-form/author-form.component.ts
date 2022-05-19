@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Author } from '../model/Author';
-import { BaseAuthor } from '../model/BaseAuthor';
+import { BaseAuthor } from '../../model/BaseAuthor';
 
 @Component({
   selector: 'app-author-form',

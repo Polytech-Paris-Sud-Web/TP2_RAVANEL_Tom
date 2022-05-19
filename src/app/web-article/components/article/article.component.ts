@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ArticleService } from '../article.service';
-import { Article } from '../model/Article';
+import { Article } from '../../model/Article';
+import { ArticleService } from '../../services/article.service';
 
 @Component({
   selector: 'app-article',
