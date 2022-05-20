@@ -1,5 +1,5 @@
 # TP2
-Voici le code du TP2 si jamais il y a un problème n'hésitez pas à me contacter.
+Voici le code du TP2. Si jamais il y a un problème n'hésitez pas à me contacter.
 
 ## Histoire de cache
 À présent, on peut télécharger l'application et l'avoir sur son téléphone. Le site est aussi disponible au public. 
