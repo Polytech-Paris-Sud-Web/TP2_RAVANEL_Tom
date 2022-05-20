@@ -49,7 +49,6 @@ export class ArticlesComponent implements OnInit {
         article.content.toLowerCase().includes(searchedText.toLowerCase()))  
         this.articles = res;
       });
-    }
-    
+    }    
   }
 }
